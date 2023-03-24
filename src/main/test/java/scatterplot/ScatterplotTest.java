@@ -30,7 +30,7 @@ public class ScatterplotTest {
         loginPage.inputPasswd("Axa@Demo");
         loginPage.clickLoginBtn();
         summaryPage = new SummaryPage(driver);
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.findElement(By.xpath(String.format(summaryPage.NAME_BUTTON_PATTERN, "Scatter-plot"))).click();
         scatterplotPage = new ScatterplotPage(driver);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -60,25 +60,28 @@ public class ScatterplotTest {
     @Test
     public void testXAttribute() {
         scatterplotPage.clickXAttribute();
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         scatterplotPage.clickXAttributeElement();
-        String actual = scatterplotPage.textXAttribute();
-        Assert.assertEquals("Size", actual);
+        boolean actual = driver.findElement(By.xpath("//input[@class='autocomplete-input ng-pristine ng-valid ng-touched' and @title='Size']")).isDisplayed();
+        Assert.assertTrue(actual);
     }
 
     @Test
     public void testYAttribute() {
         scatterplotPage.clickYAttribute();
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         scatterplotPage.clickYAttributeElement();
-        String actual = scatterplotPage.textYAttribute();
-        Assert.assertEquals("Shortfall", actual);
+        boolean actual = driver.findElement(By.xpath("//input[@class='autocomplete-input ng-pristine ng-valid ng-touched' and @title='Shortfall']")).isDisplayed();
+        Assert.assertTrue(actual);
     }
 
     @Test
     public void testIntervals() {
         scatterplotPage.clickIntervals();
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         scatterplotPage.clickIntervalsElement();
-        String actual = scatterplotPage.textIntervals();
-        Assert.assertEquals("25", actual);
+        boolean actual = driver.findElement(By.xpath("//input[@class='autocomplete-input ng-pristine ng-valid ng-touched' and @title='25']")).isDisplayed();
+        Assert.assertTrue(actual);
     }
 
     @After

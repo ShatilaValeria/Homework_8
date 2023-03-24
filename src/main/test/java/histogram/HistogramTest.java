@@ -51,19 +51,21 @@ public class HistogramTest {
     }
 
     @Test
-    public void testAttribute() {
+    public void testAttribute(){
         histogramPage.clickAttribute();
         histogramPage.clickElementAttribute();
-        String actual = histogramPage.textAttribute();
-        Assert.assertEquals("Size", actual);
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        boolean actual = driver.findElement(By.xpath("//input[@title='Size']")).isDisplayed();
+        Assert.assertTrue(actual);
     }
 
     @Test
     public void testInterval() {
         histogramPage.clickInterval();
         histogramPage.clickElementInterval();
-        String actual = histogramPage.textInterval();
-        Assert.assertEquals("25", actual);
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        boolean actual = driver.findElement(By.xpath("//input[@title='25']")).isDisplayed();
+        Assert.assertTrue(actual);
     }
 
     @After

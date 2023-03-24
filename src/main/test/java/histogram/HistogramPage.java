@@ -16,7 +16,7 @@ public class HistogramPage {
     @FindBy(xpath = "(//div[@class='autocomplete-container'])[1]")
     private WebElement attribute;
 
-    @FindBy(xpath = "//(//div[@class='autocomplete-container'])[2]")
+    @FindBy(xpath = "(//div[@class='autocomplete-container'])[2]")
     private WebElement interval;
 
     @FindBy(xpath = "//div[@class='autocomplete-dropdown-menu-wrapper']")
