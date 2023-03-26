@@ -62,7 +62,7 @@ public class ScatterplotTest {
         scatterplotPage.clickXAttribute();
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         scatterplotPage.clickXAttributeElement();
-        boolean actual = driver.findElement(By.xpath("//input[@class='autocomplete-input ng-pristine ng-valid ng-touched' and @title='Size']")).isDisplayed();
+        boolean actual = driver.findElement(By.xpath(String.format(scatterplotPage.NAME_PATTERN, "Size"))).isDisplayed();
         Assert.assertTrue(actual);
     }
 
@@ -71,7 +71,7 @@ public class ScatterplotTest {
         scatterplotPage.clickYAttribute();
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         scatterplotPage.clickYAttributeElement();
-        boolean actual = driver.findElement(By.xpath("//input[@class='autocomplete-input ng-pristine ng-valid ng-touched' and @title='Shortfall']")).isDisplayed();
+        boolean actual = driver.findElement(By.xpath(String.format(scatterplotPage.NAME_PATTERN, "Shortfall"))).isDisplayed();
         Assert.assertTrue(actual);
     }
 
@@ -80,7 +80,7 @@ public class ScatterplotTest {
         scatterplotPage.clickIntervals();
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         scatterplotPage.clickIntervalsElement();
-        boolean actual = driver.findElement(By.xpath("//input[@class='autocomplete-input ng-pristine ng-valid ng-touched' and @title='25']")).isDisplayed();
+        boolean actual = driver.findElement(By.xpath(String.format(scatterplotPage.NAME_PATTERN, "25"))).isDisplayed();
         Assert.assertTrue(actual);
     }
 

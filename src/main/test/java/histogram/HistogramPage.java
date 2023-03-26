@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class HistogramPage {
     public WebDriver driver;
+    public String NAME_TABLE_PATTERN = "//b[@title='%s']";
 
     public HistogramPage(WebDriver driver) {
         PageFactory.initElements(driver, this);

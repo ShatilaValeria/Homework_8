@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ScatterplotPage {
     public WebDriver driver;
+    public String NAME_PATTERN = "//input[@class='autocomplete-input ng-pristine ng-valid ng-touched' and @title='%s']";
 
     public ScatterplotPage(WebDriver driver) {
         PageFactory.initElements(driver, this);

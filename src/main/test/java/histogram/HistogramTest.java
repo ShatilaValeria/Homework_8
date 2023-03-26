@@ -55,7 +55,7 @@ public class HistogramTest {
         histogramPage.clickAttribute();
         histogramPage.clickElementAttribute();
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        boolean actual = driver.findElement(By.xpath("//input[@title='Size']")).isDisplayed();
+        boolean actual = driver.findElement(By.xpath(String.format(histogramPage.NAME_TABLE_PATTERN, "Size"))).isDisplayed();
         Assert.assertTrue(actual);
     }
 
@@ -64,7 +64,7 @@ public class HistogramTest {
         histogramPage.clickInterval();
         histogramPage.clickElementInterval();
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        boolean actual = driver.findElement(By.xpath("//input[@title='25']")).isDisplayed();
+        boolean actual = driver.findElement(By.xpath(String.format(histogramPage.NAME_TABLE_PATTERN, "25"))).isDisplayed();
         Assert.assertTrue(actual);
     }
 
