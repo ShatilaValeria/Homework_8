@@ -1,11 +1,12 @@
-package grid;
+package tests;
 
-import login.LoginPage;
+import page.LoginPage;
 import org.junit.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import summary.SummaryPage;
+import page.GridPage;
+import page.SummaryPage;
 
 import java.util.concurrent.TimeUnit;
 
@@ -75,7 +76,6 @@ public class GridTest {
         boolean actual = driver.findElement(By.xpath("//div[@class='modal-body']")).isDisplayed();
         Assert.assertTrue(actual);
     }
-
 
     @After
     public void tearDown() {

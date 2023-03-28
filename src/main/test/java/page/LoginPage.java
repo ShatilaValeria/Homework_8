@@ -1,4 +1,4 @@
-package login;
+package page;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,33 +13,19 @@ public class LoginPage {
         this.driver = driver;
     }
 
-    /**
-     * определение локатора поля ввода логина
-     */
+    //определение локатора поля ввода логина
     @FindBy(xpath = "//input[@formcontrolname='username']")
     private WebElement loginField;
 
-    /**
-     * определение локатора поля ввода пароля
-     */
     @FindBy(xpath = "//input[@formcontrolname='password']")
     private WebElement passwdField;
 
-    /**
-     * определение локатора кнопки входа в аккаунт
-     */
     @FindBy(xpath = "//button[@ class='app-blue-btn w-100']")
     private WebElement loginBtn;
 
-    /**
-     * определение входа в аккаунт
-     */
     @FindBy(xpath = "//span[@class= 'header__user-name hidden-text' and text()='SELENIUM_CHROME']")
     private WebElement user;
 
-    /**
-     * определение неккоректных данных
-     */
     @FindBy(xpath = "//span[text()='Bad credentials']")
     private WebElement noUserMassage;
 

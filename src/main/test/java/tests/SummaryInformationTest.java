@@ -1,6 +1,6 @@
-package summary;
+package tests;
 
-import login.LoginPage;
+import page.LoginPage;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -8,10 +8,11 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import page.SummaryPage;
 
 import java.util.concurrent.TimeUnit;
 
-public class InformationTest {
+public class SummaryInformationTest {
     public static WebDriver driver;
     public static LoginPage loginPage;
     public static SummaryPage summaryPage;
@@ -53,7 +54,6 @@ public class InformationTest {
         boolean actualIsDisplay = driver.findElement(By.xpath(String.format(summaryPage.INFORNATION_PATTERN, "Total losing orders"))).isDisplayed();
         Assert.assertTrue(actualIsDisplay);
     }
-
 
     @AfterClass
     public static void tearDown() {

@@ -1,8 +1,9 @@
-package login;
+package tests;
 
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import page.LoginPage;
 
 import java.util.concurrent.TimeUnit;
 

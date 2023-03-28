@@ -1,6 +1,6 @@
-package summary;
+package tests;
 
-import login.LoginPage;
+import page.LoginPage;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -8,10 +8,11 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import page.SummaryPage;
 
 import java.util.concurrent.TimeUnit;
 
-public class TableTest {
+public class SummaryTableTest {
     public static WebDriver driver;
     public static LoginPage loginPage;
     public static SummaryPage summaryPage;
@@ -82,5 +83,4 @@ public class TableTest {
     public static void tearDown() {
         driver.quit();
     }
-
 }
